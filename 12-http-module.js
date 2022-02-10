@@ -16,20 +16,4 @@ const server = http.createServer((req, res)=> {
     }
 });
 
-const server2 = http.createServer((req, res) => {
-    if(req.url === '/'){
-        res.write('Welcome to the home page')
-    }
-    if(req.url === '/about'){
-        res.write('A short history')
-    }
-    res.end(`
-    <h1>Oops!</h1>
-    <p>We cant seem to find the page you are looking for</p>
-    <a href="/">Back home</a>
-    `)
-});
-
-server2.listen(5000);
-
 server.listen(3000);
